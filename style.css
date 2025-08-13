@@ -1,9 +1,39 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #000;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+  font-family: 'Georgia', serif;
+  color: #ffd27f;
 }
 
 canvas {
-    display: block;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#birthdayText {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffd27f;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4;
+  opacity: 0;
+  max-width: 80vw;
+  transition: opacity 2s ease-in-out;
+  text-shadow:
+    0 0 10px #ffd27f,
+    0 0 20px #ffd27f,
+    0 0 30px #ffd27f,
+    0 0 40px #ffae3d,
+    0 0 70px #ffae3d;
+  user-select: none;
+  pointer-events: none;
 }
