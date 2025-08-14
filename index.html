@@ -1,175 +1,44 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Magical Birthday Surprise</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;600;700&display=swap" rel="stylesheet">
-<audio id="bg-music" src="happy-birthday-to-you-piano-version-13976.mp3" autoplay loop muted></audio>
-<style>
-body {
-  margin: 0;
-  font-family: "Noto Sans Georgian", sans-serif;
-  background: radial-gradient(circle at center, #ffe6eb, #fff0f3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-.gift-container {
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-}
-.gift-box {
-  width: 320px;
-  height: 320px;
-  background: linear-gradient(145deg, #ff5f7d, #d43f5e);
-  border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  transition: transform 1s ease, opacity 1s ease;
-}
-.bow {
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at 30% 30%, #fff, #f5c0c8);
-  border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-.letter {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 20px;
-  border: 6px solid gold;
-  box-shadow: 0 0 30px gold;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 1s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: sparkle 2s infinite alternate;
-}
-@keyframes sparkle {
-  from { box-shadow: 0 0 15px gold; }
-  to { box-shadow: 0 0 35px gold; }
-}
-.letter h2 {
-  color: #d43f5e;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-.letter p {
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-.gift-open .gift-box {
-  opacity: 0;
-  transform: scale(0) rotate(720deg);
-  pointer-events: none;
-}
-.gift-open .letter {
-  opacity: 1;
-  transform: scale(1);
-}
-@keyframes confettiFall {
-  0% {transform: translateY(-10vh) rotate(0deg);}
-  100% {transform: translateY(100vh) rotate(720deg);}
-}
-.confetti {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: -10px;
-  animation: confettiFall linear infinite;
-}
-.cake {
-  width: 120px;
-  margin-top: 20px;
-  animation: bounce 1s infinite alternate;
-}
-@keyframes bounce {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px); }
-}
-
-/* ახალი ფოტო Letter-ის გვერდით */
-.birthday-photo {
-  position: absolute;
-  width: 100px;
-  top: 50%;
-  right: -120px;
-  transform: translateY(-50%);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  /* კონტურების ეფექტი */
-  filter: grayscale(100%) contrast(200%) brightness(150%);
-  opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
-}
-.gift-open .birthday-photo {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.05);
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="gift-container" id="giftContainer">
-  <div class="gift-box">
-    <div class="bow"></div>
-  </div>
+
+  <!-- მისალოცი ტექსტი -->
   <div class="letter">
     <h2>🎉 გილოცავ დაბადების დღეს, დათუნა 🌟</h2>
-    <p>მინდა, რომ ეს წელი სავსე იყოს სითბოთი, ბედნიერებით და საოცარი ოცნებების ასრულებით.</p>
+    <p>მინდა, რომ ეს წელი სავსე იყოს სითბოთი, ბედნიერებით და საოცარი ოცნებების ასრულებით</p>
     <p>ბედნიერი ვარ, რომ უკვე 12 წელია ჩემს ცხოვრებაში ხარ. ❤️</p>
-    <img src="https://cdn.pixabay.com/animation/2023/02/28/14/23/14-23-49-312_512.gif" alt="Animated Birthday Cake" class="cake">
-    <img src="481236671_2430183144002100_7045927550852752797_n.jpg" alt="Birthday Photo" class="birthday-photo">
   </div>
-</div>
 
-<script>
-const giftContainer = document.getElementById('giftContainer');
-const music = document.getElementById('bg-music');
+  <!-- აუდიო -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-function unmuteMusic() {
-  music.muted = false;
-  document.removeEventListener('click', unmuteMusic);
-  document.removeEventListener('scroll', unmuteMusic);
-}
-document.addEventListener('click', unmuteMusic);
-document.addEventListener('scroll', unmuteMusic);
+  <!-- ვიზუალური ეფექტები -->
+  <div class='moon'>
+    <div class='crater1'></div>
+    <div class='crater2'></div>
+    <div class='crater3'></div>
+  </div>
 
-function createConfetti() {
-  for (let i = 0; i < 150; i++) {
-    const confetti = document.createElement('div');
-    confetti.classList.add('confetti');
-    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
-    confetti.style.left = Math.random() * 100 + 'vw';
-    confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
-    document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(), 5000);
-  }
-}
+  <canvas id="canvas"></canvas>
+  <div id="sea"></div>
+  <div id="beach"></div>
 
-giftContainer.addEventListener('click', () => {
-  giftContainer.classList.add('gift-open');
-  createConfetti();
-  if (music.muted) music.muted = false;
-});
-</script>
+  <div id="merrywrap" class="merrywrap">
+    <div class="giftbox">
+      <div class="cover"><div></div></div>
+      <div class="box"></div>
+    </div>
+    
+    <!-- .icons ამოშლილია, აღარ გამოჩნდება "Happy Birthday Code Masala" -->
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
