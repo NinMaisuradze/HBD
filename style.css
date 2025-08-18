@@ -460,15 +460,15 @@ div#sea {
 .giftbox:after {
   color: #ffffff;
   font-size: 28px;
-}
-.letter {
+  
+ .letter {
   position: absolute;
-  top: 50%;           /* ან ზუსტად რომ გადმოწიო ქვემოთ: top: 400px; */
+  top: 40%;           /* 50%-დან ოდნავ ქვემოთ შემცირებული */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
   color: white;
-  font-size: 16px;    /* ზომა შენახე პატარა თუ დიდი არ გინდა */
-  margin: 0;          /* flex-ს არ იყენებ */
+  font-size: 16px;
+  margin: 0;
 }
 
