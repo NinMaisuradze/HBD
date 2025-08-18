@@ -462,6 +462,10 @@ div#sea {
   font-size: 28px;
 }
 .letter {
-  color: #ffffff;
-  font-size: 1.2em;
+  display: flex;
+  justify-content: center; 
+  text-align: center;
+  color: white;
+  margin-top: 600px;         
+  font-size: large;
 }
