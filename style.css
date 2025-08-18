@@ -467,8 +467,8 @@ div#sea {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: white;
   font-size: 16px;
   margin: 0;
+  color: white;
 }
 
