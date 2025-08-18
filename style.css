@@ -462,10 +462,13 @@ div#sea {
   font-size: 28px;
 }
 .letter {
-  display: flex;
-  justify-content: center; 
+  position: absolute;
+  top: 50%;           /* ან ზუსტად რომ გადმოწიო ქვემოთ: top: 400px; */
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  margin-top: 400px;         
-  font-size: large;
+  font-size: 16px;    /* ზომა შენახე პატარა თუ დიდი არ გინდა */
+  margin: 0;          /* flex-ს არ იყენებ */
 }
+
