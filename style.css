@@ -471,4 +471,17 @@ div#sea {
   margin: 0;
   color: white;
 }
-
+#final-message {
+  position: absolute;
+  top: calc(40% + 120px); /* .letter ქვემოთ */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  opacity: 0; /* დამალული თავიდან */
+  transition: opacity 3s ease-in-out;
+}
+#final-message.show {
+  opacity: 1; /* გამოჩნდება ნელ-ნელა */
+}

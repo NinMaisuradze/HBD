@@ -154,3 +154,4 @@ function reveal(){
   audio.play().catch(()=>{}); // ბრაუზერის autoplay block
   document.body.appendChild(audio);
 }
+
