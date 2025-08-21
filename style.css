@@ -164,6 +164,8 @@ div#sea {
 .icons {
   position: absolute;
   left: 10px;
+  /*top:50%;
+  width: 100%;*/
   height: auto;
   transform: translateY(10px) rotate(-20deg);
 }
@@ -359,6 +361,7 @@ div#sea {
 }
 
 .step-4 .icons .row span, .step-3 .icons .row span {
+  /*animation: wobble 0.6s linear infinite forwards;*/
   color: #c6e2ff;
   animation: neon .08s ease-in-out infinite alternate;
 }
@@ -458,9 +461,9 @@ div#sea {
   font-size: 28px;
 }
   
-.letter {
+ .letter {
   position: absolute;
-  top: 40%;
+  top: 40%;           /* 50%-დან ოდნავ ქვემოთ შემცირებული */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -468,18 +471,17 @@ div#sea {
   margin: 0;
   color: white;
 }
-
 #final-message {
   position: absolute;
-  top: calc(40% + 120px); 
+  top: calc(40% + 120px); /* .letter ქვემოთ */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   font-size: 18px;
   color: white;
-  opacity: 0;
+  opacity: 0; /* დამალული თავიდან */
   transition: opacity 3s ease-in-out;
 }
 #final-message.show {
-  opacity: 1; 
+  opacity: 1; /* გამოჩნდება ნელ-ნელა */
 }
