@@ -5,7 +5,7 @@ window.requestAnimFrame = (function () {
          function(callback) { window.setTimeout(callback, 1000/60); };
 })();
 
-// CANVAS
+
 var canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d'),
     cw = window.innerWidth,
@@ -23,14 +23,12 @@ var canvas = document.getElementById('canvas'),
 canvas.width = cw;
 canvas.height = ch;
 
-// Utility
 function random(min, max) { return Math.random() * (max - min) + min; }
 function calculateDistance(p1x, p1y, p2x, p2y) {
   var xDistance = p1x - p2x, yDistance = p1y - p2y;
   return Math.sqrt(xDistance*xDistance + yDistance*yDistance);
 }
 
-// Firework
 function Firework(sx, sy, tx, ty) {
   this.x = sx; this.y = sy; this.sx = sx; this.sy = sy;
   this.tx = tx; this.ty = ty;
@@ -66,7 +64,7 @@ Firework.prototype.draw = function(){
   ctx.stroke();
 }
 
-// Particle
+
 function Particle(x,y){
   this.x=x; this.y=y; this.coordinates=[]; this.coordinateCount=5;
   while(this.coordinateCount--) this.coordinates.push([this.x,this.y]);
@@ -93,13 +91,12 @@ Particle.prototype.draw = function(){
   ctx.stroke();
 }
 
-// Particle creation
 function createParticles(x,y){
   var particleCount=30;
   while(particleCount--) particles.push(new Particle(x,y));
 }
 
-// Loop
+
 function loop(){
   requestAnimFrame(loop);
   hue+=0.5;
@@ -115,7 +112,6 @@ function loop(){
   if(limiterTick>=limiterTotal){ if(mousedown){ fireworks.push(new Firework(cw/2,ch,mx,my)); limiterTick=0; } } else limiterTick++;
 }
 
-// Giftbox click handler
 window.onload = function(){
   var merrywrap=document.getElementById("merrywrap");
   var box=merrywrap.getElementsByClassName("giftbox")[0];
@@ -141,17 +137,17 @@ window.onload = function(){
   init();
 }
 
-// Reveal function: Fireworks + Music
+
 function reveal(){
   document.querySelector('.merrywrap').style.backgroundColor='transparent';
   loop();
 
-  // 🎵 მუსიკა
+ 
   var audio=document.createElement("audio");
-  audio.src="happy-birthday-to-you-piano-version-13976.mp3"; // ფაილის რეალური მისამართი
+  audio.src="happy-birthday-to-you-piano-version-13976.mp3"; 
   audio.loop=true;
   audio.autoplay=true;
-  audio.play().catch(()=>{}); // ბრაუზერის autoplay block
+  audio.play().catch(()=>{}); 
   document.body.appendChild(audio);
 }
 
