@@ -1,0 +1,391 @@
+:root {
+  --site-bg: #00032c;
+  --header-bg: #fff;
+  --logo-color: #00032c;
+  --primary: #b48b18;
+  --secondary: #fff;
+  --text: #00032c;
+  --focus: #e2c96f;
+}
+
+.accessibility-widget {
+  font-family: inherit;
+  position: fixed;
+  right: 100 px;
+  bottom: 18px;
+  z-index: 1400;
+}
+
+.access-panel {
+  display: none;
+  width: 320px;
+  background: var(--secondary);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  margin-bottom: 8px;
+  text-align: left;
+}
+.accessibility-widget.open .access-panel {
+  display: block;
+}
+.access-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.access-controls button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  color: black;
+}
+.access-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.disable-frame {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: 2px solid var(--focus);
+  color: var(--focus);
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: transparent;
+  font-weight: 700;
+}
+
+.access-header {
+  position: relative;
+  transform: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+
+  .access-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 6px 8px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    height: 56px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .access-panel {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 64px;
+    width: 320px;
+    background: var(--secondary);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  &.open .access-panel {
+    display: block;
+  }
+}
+
+.access-panel .control-row {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.site-header {
+  background: var(--header-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #00032c;
+  font-family: "Playfair Display", serif;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem 0.5rem;
+  position: relative;
+}
+
+.logo {
+  text-decoration: none;
+  background: transparent;
+  padding: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.logo img {
+  max-height: 60px;
+  width: auto;
+  display: inline-block;
+  border-radius: 50%;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.logo-text {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: var(--logo-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 76px;
+  margin-left: auto;
+
+  button {
+    outline: none;
+  }
+}
+
+.location-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.flag-icon {
+  width: 22px;
+  height: auto;
+  border-radius: 2px;
+}
+
+.utility-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+}
+.icon-btn:hover {
+  color: var(--primary);
+}
+
+.primary-nav {
+  margin-top: 0;
+  background: var(--header-bg);
+}
+.primary-nav .nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.8rem 0;
+}
+.primary-nav a,
+.submenu-toggle {
+  color: var(--text);
+  text-decoration: none;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  padding: 0.25rem;
+  position: relative;
+  transition: color 0.3s;
+}
+.primary-nav a:hover,
+.submenu-toggle:hover {
+  color: var(--primary);
+}
+.new {
+  color: var(--primary);
+  font-weight: 600;
+}
+.has-submenu {
+  position: relative;
+}
+.submenu {
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background: var(--secondary);
+  border-radius: 6px;
+  padding: 0.7rem 0.5rem;
+  min-width: 220px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  display: none;
+  z-index: 1;
+}
+.submenu.open {
+  display: block;
+}
+.submenu li {
+  text-align: left;
+}
+.submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+.submenu a:hover {
+  background: #f8f8f8;
+  color: var(--primary);
+}
+
+.site-footer {
+  background: var(--site-bg);
+  color: var(--logo-color);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-family: "Playfair Display", serif;
+}
+.footer-top {
+  margin-bottom: 1.2rem;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.social-links a img {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  transition: transform 0.3s, filter 0.3s;
+}
+.social-links a:hover img {
+  transform: scale(1.15);
+}
+.footer-text {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+.footer-nav a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .primary-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 0.5rem 1rem;
+  }
+  .access-header .access-panel {
+    right: 0;
+    left: 0;
+    transform: none;
+    width: auto;
+    margin: 0 12px;
+  }
+  .social-links {
+    gap: 1rem;
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+/* === accessibility safety rules: prevent overlap with other icons === */
+
+/* slight left offset when floating so it doesn't cover header icons */
+.accessibility-widget {
+  right: 80px;
+}
+
+/* header-specific placement: if you move the widget into .header-controls, these rules apply */
+.site-header .accessibility-widget {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 8px 0 0;
+  right: auto;
+  bottom: auto;
+  z-index: 1150;
+  background: transparent;
+  padding: 0;
+}
+
+.site-header .access-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  left: auto;
+  width: 320px;
+  margin: 0;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header .accessibility-widget {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1400;
+    margin: 0;
+    background: #00032c;
+    border-radius: 8px;
+    padding: 6px;
+  }
+  .site-header .access-panel {
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}

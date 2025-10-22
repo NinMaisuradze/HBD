@@ -1,0 +1,38 @@
+.hero {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #00032c;
+  text-align: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  color: #000000 !important;
+  background: none !important;
+  border: none !important;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.btn-primary:hover {
+  text-decoration: underline !important;
+}
